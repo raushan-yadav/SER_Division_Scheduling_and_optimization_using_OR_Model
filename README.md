@@ -1,4 +1,4 @@
-# SER Division Scheduling-and-Optimization-using-OR-Model
+# SER Division Scheduling and Optimization using OR Model
 ### Chakradharpur Division, South Eastern Railway (SER)
 
 ## Overview
