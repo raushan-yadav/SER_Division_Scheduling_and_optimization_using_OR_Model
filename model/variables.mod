@@ -7,3 +7,4 @@ var d{T, N} >= 0;   # Departure time
 
 # Binary sequencing variable for single-line conflicts
 var x{T, T, As} binary;
+var Delay{T} >= 0;
