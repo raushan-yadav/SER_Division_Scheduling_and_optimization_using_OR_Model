@@ -65,11 +65,12 @@ This formulation ensures that **freight trains receive higher precedence during 
 ---
 
 ## Data Source
-All parameters are derived from:
-- **Working Time Table (WTT)** of Chakradharpur Division  
-- Sectional running times  
-- Minimum dwell times  
-- Junction headways  
+The dataset is extracted from the Working Time Table (WTT) of the
+Chakradharpur Division (SER). To ensure tractability and clarity,
+a representative freight-dominated corridor is modeled as a pilot
+network. Section running times, dwell times, and headways are
+directly aligned with WTT specifications.
+
 
 ---
 
