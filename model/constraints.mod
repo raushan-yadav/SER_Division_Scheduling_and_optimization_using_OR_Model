@@ -7,7 +7,8 @@ subject to Dwell_Time {t in T, n in N}:
     d[t,n] >= a[t,n] + delta[t,n];
 
 subject to Delay_Definition {t in T}:
- Delay[t] >= a[t,last(N)] - S[t];
+  Delay[t] >= a[t, last(N)] - S[t];
+
 
 # Section travel time
 subject to Running_Time {t in T, (n1,n2) in A}:
