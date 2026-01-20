@@ -53,6 +53,40 @@ where:
 
 This formulation ensures that **freight trains receive higher precedence during conflicts**, reflecting their economic importance in mineral-dense corridors.
 
+## Model Execution (AMPL)
+
+The optimization model is executed using AMPL by
+linking the modular model files with the WTT-based
+dataset of Chakradharpur Division.
+
+Main model file:
+- model/main.mod
+
+Data file:
+- data/chakradharpur.dat
+### Running the Model
+
+```bash
+ampl
+model model/main.mod;
+data data/chakradharpur.dat;
+solve;
+display a, d;
+
+## Freight Priority Justification
+
+Freight trains are assigned higher weights in the
+objective function to reflect their economic importance
+in the Chakradharpur Division, which handles heavy
+mineral and goods traffic.
+
+During conflicts on single-line sections and junctions,
+the optimization model allows freight trains to pass
+earlier while passenger trains absorb comparatively
+small delays. This behavior aligns with real-world
+railway operational practices.
+
+
 ---
 
 ### Key Constraints
@@ -81,28 +115,6 @@ Chakradharpur Division and is consistent with the
 redeveloped optimization model.
 
 
-## Pilot Corridor Selection
-
-To ensure clarity and tractability during the initial coding and validation phase,
-the model is first tested on a **representative pilot corridor** within the
-Chakradharpur Division of South Eastern Railway (SER), rather than the complete
-division network.
-
-The selected pilot corridor is:
-
-RKSN → CNI → CKP → TATA → KND
-
-This corridor is chosen because:
-- it lies on a **freight-intensive route** within the Chakradharpur Division,
-- it includes **major junctions** such as Chakradharpur (CKP),
-- it contains **capacity-constrained sections** relevant for conflict resolution,
-- and it is well documented in the Working Time Table (WTT).
-
-Using a pilot corridor allows the redeveloped optimization model to be
-**validated on realistic data** while keeping the problem size manageable.
-The same formulation can later be scaled to the full division network without
-any structural changes.
-
 
 ---
 
@@ -123,6 +135,32 @@ docs/
  └─ model_formulation.md
 
 └── README.md
+
+## Result Interpretation
+
+The optimized schedule demonstrates that:
+- Freight trains experience lower delays compared to
+  passenger trains under conflicting scenarios.
+- Safety constraints such as headways and no-wait
+  blocking are strictly satisfied.
+- The solution remains feasible under single-line
+  capacity limitations.
+
+This confirms that the model is not purely theoretical
+but captures key operational realities of the division.
+## Result Interpretation
+
+The optimized schedule demonstrates that:
+- Freight trains experience lower delays compared to
+  passenger trains under conflicting scenarios.
+- Safety constraints such as headways and no-wait
+  blocking are strictly satisfied.
+- The solution remains feasible under single-line
+  capacity limitations.
+
+This confirms that the model is not purely theoretical
+but captures key operational realities of the division.
+
 
 
 ---
