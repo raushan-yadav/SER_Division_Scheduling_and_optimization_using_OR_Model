@@ -1,7 +1,2 @@
-# =========================
-# Objective Function
-# =========================
-
-minimize Total_Delay:
-    sum {t in Tf} wf * (a[t, last(N)] - S[t])
-  + sum {t in Tp} wp * (a[t, last(N)] - S[t]);
+minimize Total_Weighted_Delay:
+ sum{t in T} P[t] * Delay[t];
