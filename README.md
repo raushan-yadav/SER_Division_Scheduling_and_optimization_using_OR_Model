@@ -105,7 +105,7 @@ a representative freight-dominated corridor is modeled as a pilot
 network. Section running times, dwell times, and headways are
 directly aligned with WTT specifications.
 
-⚠️ Note on Data Redevelopment
+ Note on Data Redevelopment
 
 The initial illustrative dataset was replaced with a
 Working Time Table (WTT)-based dataset to ensure
@@ -200,7 +200,7 @@ complete Chakradharpur Division WTT data.
 ---
 
 ## Author
-**Raushan Yadav**  
+Raushan Yadav 
 Research Intern,
 Indian Institute of Technology Kharagpur,
 Kharagpur - 721302, West Bengal, India
