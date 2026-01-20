@@ -10,3 +10,5 @@ set N;          # Nodes (stations / junctions)
 set A;          # Track sections (arcs)
 
 set As ⊆ A;     # Single-line sections
+set J ⊂ N;   # junction nodes
+
