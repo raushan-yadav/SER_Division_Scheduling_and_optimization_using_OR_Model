@@ -101,6 +101,25 @@ This work demonstrates how **freight-prioritized scheduling** can be modeled at 
 - yard capacity modeling, and
 - energy-efficient scheduling.
 
+## How to Run the Model
+
+The optimization model is implemented in AMPL using a modular structure.
+To run the model, follow the steps below:
+
+1. Load the main model file: 
+model model/main.mod;
+2. Load the Chakradharpur Division data extracted from the Working Time Table (WTT):
+data data/chakradharpur.dat;
+3. Solve the optimization problem:
+Solve;
+4. Display key decision variables:
+display a,d;
+This execution produces optimized arrival and departure times for each train
+while respecting capacity, headway, and single-line constraints.
+
+
+
+
 ---
 
 ## Author
