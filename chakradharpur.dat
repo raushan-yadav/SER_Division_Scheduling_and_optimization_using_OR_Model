@@ -1,1 +1,62 @@
+# =========================
+# Chakradharpur Division – Pilot Corridor (SER)
+# =========================
+
+set N := RKSN CNI CKP TATA KND MURI ;
+
+set A :=
+  (RKSN,CNI)
+  (CNI,CKP)
+  (CKP,TATA)
+  (TATA,KND)
+  (KND,MURI) ;
+
+set As :=
+  (CNI,CKP)
+  (TATA,KND) ;
+
+# -------------------------
+# Trains
+# -------------------------
+set T := F1 F2 P1 ;
+
+set Tf := F1 F2 ;
+set Tp := P1 ;
+
+# -------------------------
+# Scheduled times from WTT (minutes)
+# -------------------------
+param S :=
+  F1 0
+  F2 20
+  P1 10 ;
+
+# -------------------------
+# Section running times (from WTT)
+# -------------------------
+param tau :=
+  [F1,*] RKSN CNI 25  CNI CKP 40  CKP TATA 30  TATA KND 35  KND MURI 45
+  [F2,*] RKSN CNI 25  CNI CKP 40  CKP TATA 30  TATA KND 35  KND MURI 45
+  [P1,*] RKSN CNI 20  CNI CKP 35  CKP TATA 25  TATA KND 30  KND MURI 40 ;
+
+# -------------------------
+# Minimum dwell times
+# -------------------------
+param delta :=
+  [*,*] :=
+  F1 CKP 15   F2 CKP 15   P1 CKP 5
+  F1 TATA 10  F2 TATA 10  P1 TATA 3 ;
+
+# -------------------------
+# Headways at junctions
+# -------------------------
+param H :=
+  CKP 5
+  TATA 5 ;
+
+# -------------------------
+# Priority weights
+# -------------------------
+param wf := 5 ;   # Freight
+param wp := 1 ;   # Passenger
 
