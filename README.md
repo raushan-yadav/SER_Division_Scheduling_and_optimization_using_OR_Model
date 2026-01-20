@@ -71,6 +71,28 @@ a representative freight-dominated corridor is modeled as a pilot
 network. Section running times, dwell times, and headways are
 directly aligned with WTT specifications.
 
+## Pilot Corridor Selection
+
+To ensure clarity and tractability during the initial coding and validation phase,
+the model is first tested on a **representative pilot corridor** within the
+Chakradharpur Division of South Eastern Railway (SER), rather than the complete
+division network.
+
+The selected pilot corridor is:
+
+RKSN → CNI → CKP → TATA → KND
+
+This corridor is chosen because:
+- it lies on a **freight-intensive route** within the Chakradharpur Division,
+- it includes **major junctions** such as Chakradharpur (CKP),
+- it contains **capacity-constrained sections** relevant for conflict resolution,
+- and it is well documented in the Working Time Table (WTT).
+
+Using a pilot corridor allows the redeveloped optimization model to be
+**validated on realistic data** while keeping the problem size manageable.
+The same formulation can later be scaled to the full division network without
+any structural changes.
+
 
 ---
 
@@ -101,6 +123,8 @@ This work demonstrates how **freight-prioritized scheduling** can be modeled at 
 - yard capacity modeling, and
 - energy-efficient scheduling.
 
+
+
 ## How to Run the Model
 
 The optimization model is implemented in AMPL using a modular structure.
@@ -116,6 +140,11 @@ Solve;
 display a,d;
 This execution produces optimized arrival and departure times for each train
 while respecting capacity, headway, and single-line constraints.
+
+The current repository focuses on model formulation and data integration.
+The model is fully executable once connected to an AMPL-compatible solver.
+Computational experiments will be conducted after final calibration of the
+complete Chakradharpur Division WTT data.
 
 
 
