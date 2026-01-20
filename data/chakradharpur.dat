@@ -1,53 +1,49 @@
-# =========================
-# Sets
-# =========================
+# ====================
+# Chakradharpur Division (WTT-based)
+# ====================
 
-set T := F1 F2 P1;
-set Tf := F1 F2;
-set Tp := P1;
+# -------- Sets --------
 
-set N := RKSN CNI CKP TATA;
+set T := 02102 08005 02834 08155 08133;
+
+set Tf := 08005 02834;
+set Tp := 02102 08155 08133;
+
+set N :=
+ASB GVDP SLJR_E SLJR_W TATA ADTP
+GMH BRBS SNY MMV RKSN BRM CKP;
+
 set A :=
-    (RKSN,CNI)
-    (CNI,CKP)
-    (CKP,TATA);
+(ASB,GVDP) (GVDP,SLJR_E) (SLJR_E,SLJR_W)
+(SLJR_W,TATA) (TATA,ADTP) (ADTP,GMH)
+(GMH,BRBS) (BRBS,SNY) (SNY,MMV)
+(MMV,RKSN) (RKSN,BRM) (BRM,CKP);
 
-set As :=
-    (RKSN,CNI)
-    (CKP,TATA);
+set As := (SLJR_E,SLJR_W);
 
-# =========================
-# Parameters
-# =========================
-
-param delta :=
-[F1,*] RKSN 5  CNI 10 CKP 15 TATA 0
-[F2,*] RKSN 5  CNI 10 CKP 15 TATA 0
-[P1,*] RKSN 3  CNI 5  CKP 8  TATA 0 ;
-
-param tau :=
-[F1,RKSN,CNI] 30
-[F1,CNI,CKP] 40
-[F1,CKP,TATA] 35
-
-[F2,RKSN,CNI] 28
-[F2,CNI,CKP] 42
-[F2,CKP,TATA] 36
-
-[P1,RKSN,CNI] 25
-[P1,CNI,CKP] 35
-[P1,CKP,TATA] 30 ;
-
-param H :=
-RKSN 5
-CNI 5
-CKP 10
-TATA 5 ;
+# -------- Parameters --------
 
 param S :=
-F1 300
-F2 320
-P1 280 ;
+02102 28
+08155 35
+08133 50
+08005 60
+02834 70;
 
-param wf := 3;
-param wp := 1;
+param delta :=
+[02102, TATA] 5
+[08155, TATA] 3
+[08005, TATA] 10
+;
+
+param H :=
+TATA 4
+CKP 5;
+
+param tau :=
+[02102, ASB, GVDP] 6
+[02102, GVDP, SLJR_E] 5
+[02102, SLJR_E, SLJR_W] 2
+[02102, SLJR_W, TATA] 8
+[02102, TATA, CKP] 50
+;
